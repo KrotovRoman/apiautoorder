@@ -12,7 +12,13 @@ require_once 'ApiAutoOrder.php';
 $config['key'] = '12345';  //Ключ API - задаете в настройках подключения в админке. 
 $config['username'] = 'cofoviri'; //Ваш логин в системе AutoOrder
 $api = new ApiAutoOrder($config); //создаем объект подключения по API
-
+       
+//проверяем версию CURL, для работы необходимо не ниже 469505
+//если все работает с более низкой версией, то можете не думать об этом
+$curl_version = curl_version();
+if ($curl_version['version_number'] < 469505){
+  echo "Внимание: библиотека ApiAutoOrder может не работать из за устаревшей версии CURL на Вашем сервере! Если все работает, то можете просто удалить эту проверку!";
+}
 
 //добавить заказ
 //$data['email'] = 'test@mail.ru'; //email - обязательно!
