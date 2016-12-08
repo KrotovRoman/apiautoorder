@@ -15,6 +15,22 @@ class ApiAutoOrder {
     private $url_autoorder = 'http://autoorder.biz/api/';
     
     /*
+     * Получить данные всех заявок
+     * @return array
+     */
+    public function get_leads() {
+        return $this->api('get_leads');
+    }
+    
+    /*
+     * Получить данные всех заказов
+     * @return array
+     */
+    public function get_orders() {
+        return $this->api('get_orders');
+    }
+    
+    /*
      * Получить данные заказа
      * $id - id заказа
      * @return array

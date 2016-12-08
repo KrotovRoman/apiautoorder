@@ -9,7 +9,7 @@
  */
 require_once 'ApiAutoOrder.php';
 
-$config['key'] = 12345;  //Ключ API - задаете в настройках подключения в админке. 
+$config['key'] = '12345';  //Ключ API - задаете в настройках подключения в админке. 
 $config['username'] = 'cofoviri'; //Ваш логин в системе AutoOrder
 $api = new ApiAutoOrder($config); //создаем объект подключения по API
 
@@ -72,5 +72,11 @@ $api = new ApiAutoOrder($config); //создаем объект подключе
 
 //получить данные заказа
 //$res = $api->get_order(365);
+
+//получить данные всех заказов
+//$res = $api->get_orders();
+
+//получить данные всех заявок
+//$res = $api->get_leads();
 
 //var_dump($res);
